@@ -61,7 +61,7 @@ namespace Program
                 Console.WriteLine($"x={x}, y={y}");
             }
 
-            Console.WriteLine($"--------- Hello World--------------");
+            Console.WriteLine($"--------- Hello World----------");
             Console.WriteLine("Hello World!");
             Console.WriteLine("Knjazev Egor");
             Console.ReadLine();
