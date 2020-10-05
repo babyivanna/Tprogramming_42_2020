@@ -4,21 +4,21 @@ namespace CourseApp
 {
     public class Program
     {
-        public static double Calc(double a, double b, double x)
+        public static double Calc(double x)
         {
-            var numerator = Math.Log(Math.Pow(b, 2) - Math.Pow(x, 2)) / Math.Log(a);
-            var denominator = Math.Pow(Math.Abs(Math.Pow(x, 2) - Math.Pow(a, 2)), 1 / 3.0);
-            var y = numerator / denominator;
+            var first = Math.Pow( Math.Abs(Math.Pow(x, 2) - 2.5), 1 / 4.0);
+            var second = Math.Pow(Math.Log10(Math.Pow(x, 2)), 1 / 3.0);
+            var y = first + second;
             return y;
         }
 
-        public static (double x, double y)[] TaskA(double a, double b, double xn, double xk, double dx)
+        public static (double x, double y)[] TaskA(double xn, double xk, double dx)
         {
             var res = new(double, double)[(int)Math.Ceiling((xk - xn) / dx) + 1];
             int i = 0;
             for (var x = xn; x <= xk; x += dx)
             {
-                var y = Calc(a, b, x);
+                var y = Calc(x);
                 res[i] = (x, y);
                 i++;
             }
@@ -26,13 +26,13 @@ namespace CourseApp
             return res;
         }
 
-        public static (double x, double y)[] TaskB(double a, double b, double[] xItems)
+        public static (double x, double y)[] TaskB(double[] xItems)
         {
             var res = new(double, double)[xItems.Length];
             int i = 0;
             foreach (var x in xItems)
             {
-                var y = Calc(a, b, x);
+                var y = Calc(x);
                 res[i] = (x, y);
                 i++;
             }
@@ -42,10 +42,8 @@ namespace CourseApp
 
         public static void Main(string[] args)
         {
-            const double a = 2.0;
-            const double b = 4.1;
             Console.WriteLine($"--------- TASK A --------------");
-            var taskA = TaskA(a, b, 0.77, 1.77, 0.2);
+            var taskA = TaskA(1.25, 3.25, 0.4);
             foreach (var item in taskA)
             {
                 var(x, y) = item;
@@ -53,8 +51,8 @@ namespace CourseApp
             }
 
             Console.WriteLine($"--------- TASK B --------------");
-            double[] xItems = { 1.24, 1.38, 2.38, 3.21, 0.68 };
-            var taskB = TaskB(a, b, xItems);
+            double[] xItems = { 1.84, 2.71, 3.81, 4.56, 5.62 };
+            var taskB = TaskB(xItems);
             foreach (var item in taskB)
             {
                 var(x, y) = item;
