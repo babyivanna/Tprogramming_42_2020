@@ -85,6 +85,29 @@ namespace CourseApp
             }
 
             Console.WriteLine("Hello World!");
+
+            Console.WriteLine($"--------- Class ---------------");
+            Computer acer = new Computer();
+            Computer apple = new Computer("Apple");
+            Smartphone applePhone = new Smartphone("Apple", " ");
+            Smartphone honor = new Smartphone("Honor", "Android", 64);
+            Electronic[] electronics = new Electronic[] { acer, apple, applePhone, honor };
+            foreach (var electronic in electronics)
+            {
+                Console.WriteLine(electronic.DisplayInf());
+            }
+
+            acer.AddInf("Acer", " ", 0);
+            apple.OC = "MacOS";
+            apple.RAM = 3;
+            applePhone.AddInf("Apple", "a", 1);
+
+            foreach (var electronic in electronics)
+            {
+                Console.WriteLine(electronic.DisplayInf());
+                Console.WriteLine(electronic.Start());
+            }
+
             Console.ReadLine();
         }
     }
