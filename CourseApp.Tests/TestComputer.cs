@@ -8,19 +8,19 @@ namespace CourseApp.Tests
         [Theory]
         [InlineData("Acer", "Windows", 5, "Computer:\n  Brand: Acer\n  OC: Windows\n  RAM: 5")]
         [InlineData(" ", " ", -7, "Computer:\n  Brand: \n  OC: \n  RAM: 0")]
-        public void TestDisplayInf(string a, string b, int c, string exp)
+        public void TestToString(string a, string b, int c, string exp)
         {
             Computer actualResult = new Computer(a, b, c);
-            Assert.Equal(exp, actualResult.DisplayInf());
+            Assert.Equal(exp, actualResult.ToString());
         }
 
         [Theory]
         [InlineData(64, 64)]
         [InlineData(-7, 0)]
-        public void TestAddRAM(int c, int exp)
+        public void TestSetRAM(int c, int exp)
         {
             Computer actualResult = new Computer();
-            actualResult.AddRAM(c);
+            actualResult.SetRAM(c);
             Assert.Equal(exp, actualResult.RAM);
         }
 

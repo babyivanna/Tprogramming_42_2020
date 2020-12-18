@@ -39,8 +39,8 @@ namespace CourseApp.Tests
         public void TesteEditInf(string a, string b, int c, string exp)
         {
             Computer actualResult = new Computer();
-            actualResult.AddInf(a, b, c);
-            Assert.Equal(exp, actualResult.DisplayInf());
+            actualResult.SetInfo(a, b, c);
+            Assert.Equal(exp, actualResult.ToString());
         }
     }
 }

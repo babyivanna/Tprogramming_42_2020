@@ -9,29 +9,29 @@ namespace CourseApp
         {
         }
 
-        public Computer(string new_brand)
-        : base(new_brand)
+        public Computer(string newBrand)
+        : base(newBrand)
         {
         }
 
-        public Computer(string new_brand, string new_oc)
-        : base(new_brand, new_oc)
+        public Computer(string newBrand, string newOC)
+        : base(newBrand, newOC)
         {
         }
 
-        public Computer(string new_brand, string new_oc, int new_ram)
-        : base(new_brand, new_oc, new_ram)
+        public Computer(string newBrand, string newOC, int newRAM)
+        : base(newBrand, newOC, newRAM)
         {
         }
 
-        public override string DisplayInf()
+        public override string ToString()
         {
             return $"Computer:\n  Brand: {Brand}\n  OC: {OC}\n  RAM: {RAM}";
         }
 
-        public void AddRAM(int new_ram)
+        public void SetRAM(int newRAM)
         {
-            RAM = new_ram;
+            RAM = newRAM;
         }
 
         public string GetRAM()
@@ -39,9 +39,9 @@ namespace CourseApp
             return $"RAM {RAM}";
         }
 
-        public override void AddInf(string new_brand, string new_oc, int new_ram)
+        public override void SetInfo(string newBrand, string newOC, int newRAM)
         {
-            base.AddInf(new_brand, new_oc, new_ram);
+            base.SetInfo(newBrand, newOC, newRAM);
         }
 
         public override string Start()

@@ -11,7 +11,7 @@ namespace CourseApp.Tests
         public void TestDisplayInf(string a, string b, int c, string exp)
         {
             Smartphone actualResult = new Smartphone(a, b, c);
-            Assert.Equal(exp, actualResult.DisplayInf());
+            Assert.Equal(exp, actualResult.ToString());
         }
 
         [Fact]

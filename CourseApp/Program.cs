@@ -84,7 +84,7 @@ namespace CourseApp
                 Console.WriteLine($"x = {x}, y = {y}");
             }
 
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello World!\n");
 
             Console.WriteLine($"--------- Class ---------------");
             Computer acer = new Computer();
@@ -94,17 +94,17 @@ namespace CourseApp
             Electronic[] electronics = new Electronic[] { acer, apple, applePhone, honor };
             foreach (var electronic in electronics)
             {
-                Console.WriteLine(electronic.DisplayInf());
+                Console.WriteLine(electronic.ToString());
             }
 
-            acer.AddInf("Acer", " ", 0);
+            acer.SetInfo("Acer", " ", 0);
             apple.OC = "MacOS";
             apple.RAM = 3;
-            applePhone.AddInf("Apple", "a", 1);
+            applePhone.SetInfo("Apple", "a", 1);
 
             foreach (var electronic in electronics)
             {
-                Console.WriteLine(electronic.DisplayInf());
+                Console.WriteLine(electronic.ToString());
                 Console.WriteLine(electronic.Start());
             }
 
