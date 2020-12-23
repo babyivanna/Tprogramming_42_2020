@@ -55,6 +55,18 @@ namespace CourseApp
             return res;
         }
 
+        public static int[] DatesDifference(DateTime dateOfBirth, DateTime today)
+        {
+            int daysDiff = int.Parse((today - dateOfBirth).TotalDays.ToString());
+
+            int yearsDiff = daysDiff / 365;
+            int monthsDiff = (daysDiff % 365) / 31;
+            daysDiff = (daysDiff % 365) % 30;
+
+            int[] res = new int[] { yearsDiff, monthsDiff, daysDiff };
+            return res;
+        }
+
         public static void Main(string[] args)
         {
             const double a = -2.5;
@@ -84,9 +96,8 @@ namespace CourseApp
                 Console.WriteLine($"x = {x}, y = {y}");
             }
 
-            Console.WriteLine("Hello World!\n");
-
-            Console.WriteLine($"--------- Class ---------------");
+            // Class Task
+            Console.WriteLine("\n--------- Class ---------");
             Computer acer = new Computer();
             Computer apple = new Computer("Apple");
             Smartphone applePhone = new Smartphone("Apple", " ");
@@ -108,7 +119,14 @@ namespace CourseApp
                 Console.WriteLine(electronic.Start());
             }
 
-            Console.ReadLine();
+            // Dates Task
+            Console.WriteLine("\n--------- Dates ---------");
+
+            DateTime today = DateTime.Today;
+            DateTime dateOfBirth = new DateTime(1996, 11, 9);
+
+            int[] res = DatesDifference(dateOfBirth, today);
+            Console.WriteLine(res[0] + " year(s), " + res[1] + " month(s) " + res[2] + " day(s)");
         }
     }
 }
